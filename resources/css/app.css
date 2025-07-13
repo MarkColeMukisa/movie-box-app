@@ -1,0 +1,215 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Responsive Design Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #070707;
+  background: fixed linear-gradient(transparent, #fff 70%),
+    fixed
+      repeating-linear-gradient(
+        #efefef,
+        #efefef 1px,
+        transparent 1px,
+        transparent 40px
+      ),
+    fixed
+      repeating-linear-gradient(
+        to right,
+        #efefef,
+        #efefef 1px,
+        transparent 1px,
+        transparent 40px
+      )
+      #fff;
+  padding: 3rem;
+}
+
+h1 {
+  font-size: clamp(0.5rem, 2vw + 0.5rem, 1.75rem);
+  text-align: center;
+}
+
+h2 {
+  font-size: clamp(0.5rem, 2vw + 0.5rem, 1.25rem);
+  font-weight: 600;
+  text-align: center;
+  margin-block-end: 2rem;
+}
+
+/* Header Styles */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  border-radius: 0 0 1rem 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header > div:first-child {
+  /* Logo container */
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+header nav {
+  /* Navigation links - centered */
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+header nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+header nav a:hover {
+  background: rgba(0, 0, 0, 0.1);
+  color: #000;
+}
+
+/* Active/Inactive Navigation States */
+header nav a.active{
+  background: orangered;
+  color: white;
+  font-weight: 600;
+}
+
+header nav a.inactive {
+  color: #666;
+}
+
+header nav a.inactive:hover {
+  background: rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+header button {
+  /* Login button - right side */
+  padding: 0.5rem 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+header button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* Responsive header for mobile */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  header nav {
+    gap: 1rem;
+  }
+  
+  header nav a {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Movie Link Styles */
+.movie-link {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.movie-link:hover {
+  color: #764ba2;
+  text-decoration: underline;
+}
+
+.movie-card {
+  padding: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.7);
+  transition: all 0.3s ease;
+}
+
+.movie-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.content-boxes {
+  display: grid;
+  /* grid-template-columns:
+    repeat(auto-fit, minmax(200px, 1fr)); */
+  /* Magic happens here */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+  gap: 1rem;
+}
+
+.content-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1;
+  font-size: 1.25rem;
+  outline: 1px dotted #fff;
+  outline-offset: -0.5rem;
+}
+
+.content-box:nth-child(1),
+.content-box:nth-child(7) {
+  background-color: #fcc7a1;
+}
+
+.content-box:nth-child(2),
+.content-box:nth-child(8) {
+  background-color: #a6fee6;
+}
+
+.content-box:nth-child(3),
+.content-box:nth-child(9) {
+  background-color: #bda9fa;
+}
+
+.content-box:nth-child(4),
+.content-box:nth-child(10) {
+  background-color: #a3dbf8;
+}
+
+.content-box:nth-child(5),
+.content-box:nth-child(11) {
+  background-color: #fba7e3;
+}
+
+.content-box:nth-child(6),
+.content-box:nth-child(12) {
+  background-color: #a8c6fb;
+}
