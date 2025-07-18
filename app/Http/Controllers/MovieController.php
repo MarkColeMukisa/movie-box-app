@@ -12,7 +12,7 @@ class MovieController extends Controller
      */
     public function index()
     {
-        $movies = Movie::all();
+        $movies = Movie::latest()->get(); // get all movies from the database with the latest first
         return view('movies.index', compact('movies'));
     }
 

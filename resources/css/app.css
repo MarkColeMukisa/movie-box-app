@@ -89,13 +89,13 @@ header nav a:hover {
 }
 
 /* Active/Inactive Navigation States */
-header nav a.active{
+.active{
   background: orangered;
   color: white;
   font-weight: 600;
 }
 
-header nav a.inactive {
+.inactive {
   color: #666;
 }
 
